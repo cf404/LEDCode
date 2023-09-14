@@ -1,0 +1,87 @@
+#include <Adafruit_DotStar.h>
+#include <SPI.h>
+
+// There is only one pixel on the board
+#define NUMPIXELS 17 
+
+//Use these pin definitions for the ItsyBitsy M4
+#define DATAPIN    5
+#define CLOCKPIN   7
+ 
+Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_GBR);
+
+void setup() {
+  strip.begin(); // Initialize pins for output
+  // strip.setBrightness(80);
+  strip.show();  // Turn all LEDs off ASAP
+}
+
+void loop() {
+
+for (int i = 0; i <= 17; i++) {
+  for (int b = 1; b <= 17; b++) {
+  strip.setPixelColor(i, 0, 255, 0);
+  strip.setPixelColor(b, 0, 255, 0);
+  strip.show();
+  strip.show();
+  strip.setPixelColor(i, 102,7,7);
+  strip.setPixelColor(b, 102,7,7);
+  strip.show();
+  strip.show();
+  delay(150);
+  delay(150);
+  strip.setPixelColor(i, 0, 0, 0);
+  strip.setPixelColor(b, 0, 0, 0);
+  strip.show();
+  delay(500);
+  }
+/*  for (int b = 1; b <= 17; b++) {
+  strip.setPixelColor(b, 0, 255, 0);
+  strip.show();
+  strip.setPixelColor(b, 102,7,7);
+  strip.show();
+  delay(150);
+  strip.setPixelColor(b, 0, 0, 0);
+  strip.setPixelColor(b, 0, 0, 0);
+  strip.show();
+  delay(500);
+  }
+*/
+}
+/*
+// MOVES BACK AND FORTH
+ for (int i = 6; i >= 0; i--) {
+    strip.setPixelColor(i, 102,7,7);
+    strip.show();
+    delay(10);
+    strip.setPixelColor(i, 0, 0, 0);
+    strip.show();
+  } 
+
+  
+for (int i = 0; i <= 6; i++) {
+    strip.setPixelColor(i, 102,7,255);
+    strip.show();
+    delay(10);
+    strip.setPixelColor(i, 0, 0, 0);
+    strip.show();
+  } 
+
+for (int a = 7; a >= 12; a--) {
+    strip.setPixelColor(a, 221,6,234);
+    strip.show();
+    delay(10);
+    strip.setPixelColor(a, 0,0,0);
+    strip.show();
+}
+
+for (int a = 12; a <= 6; a++) {
+    strip.setPixelColor(a, 125,61,123);
+    strip.show();
+    delay(10);
+    strip.setPixelColor(a, 0,0,0);
+    strip.show();
+}
+
+*/
+}
